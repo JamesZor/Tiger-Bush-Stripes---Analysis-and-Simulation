@@ -1,6 +1,8 @@
 %% Question 6
 %clear
 clear all, close all, clc
+
+% define parameters
 L=15.7;
 p=[7,20,2];
 
@@ -9,11 +11,10 @@ nx = 1500; [x,Dx,Dxx] = PeriodicDiffMat([-L,L],nx);
 
 % % Initial condition (steady state + perburbation)
 e = ones(size(x)); z0 = [p(1)*e; e/p(1)];
-% z0 = z0 + 0.01*[sin(2*pi/10*x); sin(2*pi/20*x)];
 z0 = z0 + 1*[cos(4*pi/L*x); e];
-%
-% % Time step
- rhs = @(t,z) tigerbush(z,p,Dx,Dxx);
+
+% Time step
+rhs = @(t,z) tigerbush(z,p,Dx,Dxx);
 jac = @(t,z) tigerbushJacobian(z,p,Dx,Dxx);
 opts = odeset('Jacobian',jac);
 tSpan = [0:0.1:50];
@@ -27,6 +28,8 @@ figure; title('Final state');
 plot(x,ZHist(end,1:nx),x,ZHist(end,nx+1:2*nx));
 xlabel('x'); legend({'V','W'});
 
+
+%% Users functions 
 function [F, DFDZ] = tigerbush(z, p,Dx, Dxx)
 
       % Rename parameters
@@ -93,8 +96,8 @@ function plotHandle = PlotHistory(x,t,U,p,parentHandle)
   nx = size(U,2)/2;
 
   %% Assign solution label
-  solLabel(1).name = "U";
-  solLabel(2).name = "V";
+  solLabel(1).name = "V";
+  solLabel(2).name = "W";
 
    %% Position and eventually grab figure
    if isempty(parentHandle)

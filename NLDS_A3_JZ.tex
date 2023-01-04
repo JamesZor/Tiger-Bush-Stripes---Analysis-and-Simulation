@@ -131,9 +131,9 @@
     Moreover, we observe that $\Tr(J_{E_3}) = 0$ along the curve given by $\alpha = \frac{\gamma^2}{\sqrt{\gamma-1}}$, given
     $\gamma \neq 1$. The area below this curve will give a stable equilibrium, while the area above will give a unstable
     equation.
-
-
 \end{proof}
+\clearpage
+
 \begin{question}[2]
     Linerised 
 \end{question}
@@ -161,7 +161,7 @@
         .
     \end{align*}
 \end{proof}
-
+\clearpage
 \begin{question}[3]
     Perturbation of the vegetative equilibrium. 
 \end{question}
@@ -203,12 +203,15 @@
     \end{align*}
     as required.
 \end{proof}
-
+\clearpage
 \begin{question}[4]
     Dispersion Relation. 
 \end{question}
 \begin{proof}
-    \begin{figure}[b!]
+    S3: 
+
+    S4:
+    \begin{figure}[h!]
         \includegraphics[width=\linewidth]{figures/Q4_fig1.jpg}
         \caption{A boat.}
         \label{fig:boat1}
@@ -217,19 +220,56 @@
     \lstinputlisting[language=matlab]{code/A3Question4.m} 
 
 \end{proof}
-
+\clearpage
 \begin{question}[5]
    Pattern-forming instability. 
 \end{question}
 \begin{proof}
-    \begin{figure}[b!]
+    We can observe numerically from Figure $\ref{fig:q5fig1}$ that $Re( \lambda_2 (k, 8) ) < 0 $ so that it is a stable equilibrium 
+    and that $Re( \lambda_2 (k, 7) ) > 0$ which implies that it is an unstable equilibrium.
+    
+    Moreover, it can be shown that the function $Re( \lambda_2 (k, \alpha) )$ is continuous for values of
+    $\alpha = [7,8]$, since $\lambda_2$ is a polynomial function. Hence by the Intermediate value theorem
+    there must exits an $\alpha_* \in [7,8] $ and $k_*$ such that $Re( \lambda_2 (k_*, \alpha_* ) ) = 0$. 
+    Namely that $\alpha_*$ is a critical value.
+
+    We see that for $\alpha \leq \alpha_*$ there emerges a propagating wave pattern instability.
+    This is since there exist both $\pm k_*$ such that $Re(\lambda(\pm k_* , \alpha_*)) =0 $ while 
+    also we have $Im(\lambda_2(\pm k_* , \alpha_*)) \neq 0$.
+    
+    Hence we can compute the wave length by $ \Delta = 2 \pi / k_*$ so in the case when $\alpha =7$ 
+    we can use matlab to numerically find $k_* = 0.8038$ which yields a wave length of $ \Delta = 7.8166$.
+    The speed of the propagating is computed by $ c = - Im(\lambda_*) / k_*$, here $\lambda_*$ is the maximum
+    value that the $\lambda$ function obtains. In the case of $\alpha =7$ we have
+    $Im(\lambda_*)= -1.6169$, thus we have a travelling wave speed of $c = 2.0115$.
+
+    \begin{figure}[h!]
         \includegraphics[width=\linewidth]{figures/Q5_fig1.jpg}
-        \caption{A boat.}
-        \label{fig:fig2}
+        \caption{Graphical plots of real and imaginary parts of $\lambda_2 (k)$ for parameters $\alpha=[7,8]$,
+        $\beta =20$ and $\gamma =2$.}
+        \label{fig:q5fig1}
     \end{figure}
 
     \lstinputlisting[language=matlab]{code/A3Question5.m} 
     
 \end{proof}
+\clearpage
 
+\begin{question}[6]
+    
+\end{question}
+\begin{proof}
+    Some text.
+    \begin{figure}[h!]
+        \includegraphics[width=\linewidth]{figures/Q6_fig1.jpg}
+        \caption{A boat.}
+        \label{fig:fig2}
+    \end{figure}
+    \begin{figure}[h!]
+        \includegraphics[width=\linewidth]{figures/Q6_fig2.jpg}
+        \caption{A boat.}
+        \label{fig:fig2}
+    \end{figure}
+    \lstinputlisting[language=matlab]{code/A3Question6.m} 
+\end{proof}
 \end{document}

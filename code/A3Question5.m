@@ -5,12 +5,9 @@ clear all, close all, clc
 % functions
 mu      = @(a,c) (a+sqrt(a^2-4.*c^2))/(2.*c);
 tau   = @(k,a,b,c) -1 +c + i.*b.*k-k.^2-mu(a,c).^2;
-delta   = @(k,a,b,c) k.^(2) .* (1- i.*b.*k + mu(a,c).^2)
-                            + c.*(-1+i.*b.*k+mu(a,c).^2);
-lambda1 = @(k,a,b,c) (tau(k,a,b,c)-sqrt(tau(k,a,b,c).^2
-                                - 4.*delta(k,a,b,c)))/2;
-lambda2 = @(k,a,b,c) (tau(k,a,b,c)+sqrt(tau(k,a,b,c).^2
-                                - 4.*delta(k,a,b,c)))/2;
+delta   = @(k,a,b,c) k.^(2).* (1- i.*b.*k + mu(a,c).^2) + c.*(-1+i.*b.*k+mu(a,c).^2);
+lambda1 = @(k,a,b,c) (tau(k,a,b,c)-sqrt(tau(k,a,b,c).^2 - 4.*delta(k,a,b,c)))/2;
+lambda2 = @(k,a,b,c) (tau(k,a,b,c)+sqrt(tau(k,a,b,c).^2 - 4.*delta(k,a,b,c)))/2;
 
 rel1 = @(k,a,b,c) real(lambda1(k,a,b,c));
 rel2 = @(k,a,b,c) real(lambda2(k,a,b,c));
