@@ -91,10 +91,10 @@
 
 
 
-\begin{question}[1a]
+\begin{question}[1]
 \end{question}
 \begin{proof}
-    Give the following set of PDEs;
+    Given the following set of PDEs;
     \begin{align*}
         \Dp_t v &= \Dp_{x}^{2} - \gamma v = wv^2, \\
         \Dp_t w &= \beta \Dp_x w +\alpha -w -wv^2.
@@ -129,8 +129,7 @@
     \end{align*}
     Here it can be shown that $\Det(J_{E_3}) > 0$ so then the stability is determined by the trace $\Tr(J_{E_3})$.
     Moreover, we observe that $\Tr(J_{E_3}) = 0$ along the curve given by $\alpha = \frac{\gamma^2}{\sqrt{\gamma-1}}$, given
-    $\gamma \neq 1$. The area below this curve will give a stable equilibrium, while the area above will give a unstable
-    equation.
+    $\gamma > 1$. This can be seen in [edit].
 \end{proof}
 \clearpage
 
@@ -153,7 +152,12 @@
     Here we define $\mathcal{L} = \left[ \frac{\Dp f_i }{ \Dp u_j } \right]$ for $i$ and $j=1,2$. 
     Computing this yields the following matrix 
     \begin{align*}
-        \mathcal{L} \left( v_*, w_* \right)  =
+        \mathcal{L} \left( v_*, w_* \right)  &=
+        \begin{bmatrix}
+            \frac{d}{dv} v & \frac{d}{dw} v \\
+            \frac{d}{dv} w & \frac{d}{dw} w \\
+        \end{bmatrix} \\
+        &=
         \begin{bmatrix}
             \Dp_{x}^{2} - \gamma + 2 w_* v_* & {v_*}^2 \\
             -2w_* v_* & \beta \Dp_x -1 - {v_*}^2 \\
@@ -173,7 +177,7 @@
         \begin{bmatrix}
             \Dp_x^2 + \gamma & v_*^2\\
             - 2\gamma & \beta \Dp_x -1  -v_*^2
-        \end{bmatrix}
+        \end{bmatrix}.
     \end{align*}
     Now using the derivates $$\Dp_x = \frac{d}{dx}( \varphi(x,t) ) = \frac{d}{dx} \exp{ \left( \lambda t+ i k x  \right)  } = ik$$ 
     and $$ \Dp_x^2 = -k^2$$ 
@@ -184,6 +188,7 @@
             -k^2 + \gamma & v_*^2\\
             - 2\gamma & i\beta k  -1  -v_*^2
         \end{bmatrix}
+        .
     \end{align*}
     Using the equilibrium expression for $E_3$ we have $v_* = \gamma/ w_*$, then it follows that
     \begin{align*}
@@ -208,13 +213,19 @@
     Dispersion Relation. 
 \end{question}
 \begin{proof}
-    S3: 
-
-    S4:
+    For both $\lambda$ of the Jacobian matrix we plot the real and imaginary parts for the 
+    parameters $(8,20,2)$, which can be seen in $\ref{fig:q4fig1}$. In which we observe
+    $\Re(\lambda_2) < 0 $, implies that the equilibrium is stable. The can also be extended
+    to $\Re(\lambda_1) < 0$ which is not shown in the plot. 
+    Moreover we see in both cases $\Im(\lambda_1)$ and $\Im(\lambda_2)$ are not constant functions
+    which implies there is a circle motion in the stream plot. However, we also observe
+    that the they are not the complex conjugate of each other.
+    Hence the vegetative equilibrium is linear stable for $(8,20,2)$.
     \begin{figure}[h!]
         \includegraphics[width=\linewidth]{figures/Q4_fig1.jpg}
-        \caption{A boat.}
-        \label{fig:boat1}
+        \caption{The graph of $\lambda_1$ and $\lambda_2$ with both the real and imaginary parts
+        plot with the parameters of $ \alpha = 8, \beta = 20 $ and $2$.}
+        \label{fig:q4fig1}
     \end{figure}
 
     \lstinputlisting[language=matlab]{code/A3Question4.m} 
@@ -225,23 +236,23 @@
    Pattern-forming instability. 
 \end{question}
 \begin{proof}
-    We can observe numerically from Figure $\ref{fig:q5fig1}$ that $Re( \lambda_2 (k, 8) ) < 0 $ so that it is a stable equilibrium 
-    and that $Re( \lambda_2 (k, 7) ) > 0$ which implies that it is an unstable equilibrium.
+    We can observe numerically from Figure $\ref{fig:q5fig1}$ that $\Re( \lambda_2 (k, 8) ) < 0 $ so that it is a stable equilibrium 
+    and that $\Re( \lambda_2 (k, 7) ) > 0$ which implies that it is an unstable equilibrium.
     
-    Moreover, it can be shown that the function $Re( \lambda_2 (k, \alpha) )$ is continuous for values of
+    Moreover, it can be shown that the function $\Re( \lambda_2 (k, \alpha) )$ is continuous for values of
     $\alpha = [7,8]$, since $\lambda_2$ is a polynomial function. Hence by the Intermediate value theorem
-    there must exits an $\alpha_* \in [7,8] $ and $k_*$ such that $Re( \lambda_2 (k_*, \alpha_* ) ) = 0$. 
+    there must exits an $\alpha_* \in [7,8] $ and $k_*$ such that $\Re( \lambda_2 (k_*, \alpha_* ) ) = 0$. 
     Namely that $\alpha_*$ is a critical value.
 
     We see that for $\alpha \leq \alpha_*$ there emerges a propagating wave pattern instability.
-    This is since there exist both $\pm k_*$ such that $Re(\lambda(\pm k_* , \alpha_*)) =0 $ while 
-    also we have $Im(\lambda_2(\pm k_* , \alpha_*)) \neq 0$.
+    This is since there exist both $\pm k_*$ such that $\Re(\lambda(\pm k_* , \alpha_*)) =0 $ while 
+    also we have $\Im(\lambda_2(\pm k_* , \alpha_*)) \neq 0$.
     
     Hence we can compute the wave length by $ \Delta = 2 \pi / k_*$ so in the case when $\alpha =7$ 
     we can use matlab to numerically find $k_* = 0.8038$ which yields a wave length of $ \Delta = 7.8166$.
-    The speed of the propagating is computed by $ c = - Im(\lambda_*) / k_*$, here $\lambda_*$ is the maximum
+    The speed of the propagating is computed by $ c = - \Im(\lambda_*) / k_*$, here $\lambda_*$ is the maximum
     value that the $\lambda$ function obtains. In the case of $\alpha =7$ we have
-    $Im(\lambda_*)= -1.6169$, thus we have a travelling wave speed of $c = 2.0115$.
+    $\Im(\lambda_*)= -1.6169$, thus we have a travelling wave speed of $c = 2.0115$.
 
     \begin{figure}[h!]
         \includegraphics[width=\linewidth]{figures/Q5_fig1.jpg}
@@ -259,17 +270,41 @@
     
 \end{question}
 \begin{proof}
-    Some text.
+    For this question we fix the parameters to $(7,20,2)$, while we apply the Periodic boundary
+    conditions with setting $L=15.7$ and the initial conditions of
+    \begin{align*}
+        \begin{pmatrix}
+            v(x,0) \\ w(x,0)
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            v_{*,3} \\ w_{*,3}
+        \end{pmatrix}
+        +
+        \begin{pmatrix}
+            \cos{ \left( 4 \pi x / L \right)  } \\ 1
+        \end{pmatrix}.
+    \end{align*}
+    Using numerically methods and matlab we can obtain the following plots, which shows
+    the existence of a propagating wave. In Figure $\ref{fig:q6fig2}$ we see that peaks of the
+    waves occur at $x_1 = 8.52$ and $x_2= 0.6908$, which gives $\Delta = | x_1 - x_2 | = 7.8292$.
+    We see this value is close to the one computed in Question 5, which confirms our findings.
+    Moreover, we also observe that in Figure $\ref{fig:q6fig1}$ that we have a dialogical lines,
+    namely that we have periodic in both $x$ and $t$, this implies that there exists a propagating
+    wave, which we computed as in  Question 5.
     \begin{figure}[h!]
         \includegraphics[width=\linewidth]{figures/Q6_fig1.jpg}
-        \caption{A boat.}
-        \label{fig:fig2}
+        \caption{3D plot of the tiger bush Pattern-forming, in time, space and density.
+        For parameters $(7,20,2)$, $L=15.7$.}
+        \label{fig:q6fig1}
     \end{figure}
     \begin{figure}[h!]
         \includegraphics[width=\linewidth]{figures/Q6_fig2.jpg}
-        \caption{A boat.}
-        \label{fig:fig2}
+        \caption{Wave shapes of the Tiger bush pattern. Here we also mark two consecutive peaks
+        in order to measure the wave length. For parameters $(7,20,2)$, $L=15.7$.}
+        \label{fig:q6fig2}
     \end{figure}
+    \clearpage
     \lstinputlisting[language=matlab]{code/A3Question6.m} 
 \end{proof}
 \end{document}
