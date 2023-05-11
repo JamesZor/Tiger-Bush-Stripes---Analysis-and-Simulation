@@ -14,7 +14,7 @@ A minimal model for tiger bush formation is described by the following set of pa
 \end{align*}
 ```
 
-where \(\alpha\), \(\beta\), and \(\gamma\) are positive real numbers.
+where $\alpha, \beta$, and $\gamma$ are positive real numbers.
 
 Let's dissect the model term by term. The model has two state variables, \(v(x, t)\) and \(w(x, t)\), which represent the concentration of vegetation (v) and water (w) at a point \(x \in [-L, L)\) and time \(t \in \mathbb{R}_{\geq 0}\). We are assuming periodic boundary conditions, which is why we write compactly \(x \in \mathbb{R}/2L\mathbb{Z}\). The initial conditions are omitted for the sake of brevity.
 
