@@ -1,14 +1,22 @@
 
-# Tiger Bush Stripes Analysis and Simulation
+# Tiger Bush Stripes (Pattern-Forming Instabillity - Turing Pattens) Analysis and Simulation
 
-In this assignment, we will analyze and simulate the formation of so-called Tiger bush Stripes.
+## Description
+This assignment provides an overview of Tiger Bush, a fascinating natural phenomenon characterized by pattern-forming instability known as Turing patterns. We explore the concept of Tiger Bush, its formation, and the underlying mechanism of pattern generation through Turing patterns.
+
+![Alt text](figures/tigerbush?raw=true "TigerBush")
+![Alt text](figures/Q6_fig1.jpg?raw=true "SimTigerBush")
+
+## Tiger Bush
+Tiger bushes are distinct vegetation patterns that resemble the stripes on a tiger's fur. They can be observed in various types of vegetation and soil, particularly in semiarid regions on hillsides with gradual slopes. These patterns arise from the interplay between vegetation growth, water dynamics, and terrain characteristics.
+
+## Pattern-Forming Instability
+Pattern-forming instability, specifically Turing patterns, is a mathematical concept that explains the spontaneous formation of patterns in reaction-diffusion systems. In the context of Tiger Bush, Turing patterns elucidate the emergence of distinctive stripe-like vegetation patterns.
+
+## Theoretical Model
+A minimal model for Tiger Bush formation involves a set of partial differential equations (PDEs) that describe the dynamics of vegetation and water. These equations capture the diffusion of vegetation, plant death, water uptake by plants, water advection, rainfall, evaporation, and water uptake by plants affecting the water concentration.
 
 Tiger bushes are patterns of vegetation that resemble the stripes on the fur of a tiger. They can occur for many vegetation types and in many soil types. In semiarid regions, these patterns are seen on hillsides with a very gradual slope. 
-
-
-![Alt text](figures/Q6_fig1.jpg?raw=true "Title")
-
-
 
 A minimal model for tiger bush formation is described by the following set of partial differential equations (PDEs):
 
