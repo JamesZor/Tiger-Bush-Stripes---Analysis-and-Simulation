@@ -7,15 +7,9 @@ Tiger bushes are patterns of vegetation that resemble the stripes on the fur of 
 
 A minimal model for tiger bush formation is described by the following set of partial differential equations (PDEs):
 
-```latex
-\[
+```math
 \begin{align*}
 \frac{{\partial v}}{{\partial t}} &= \frac{{\partial^2 v}}{{\partial x^2}} - \gamma v + wv^2 \\
 \frac{{\partial w}}{{\partial t}} &= \beta\frac{{\partial w}}{{\partial x}} + \alpha - w - wv^2 \\
 \end{align*}
-\]
-'''
-
-# NLDS_Assignment3
-Files and documents for the assignment 3, of the Non-linear dynamical systems course.
-The details of the course can be found here: https://github.com/danieleavitabile/nonlinear-dynamical-systems-course-tutorials 
+```
