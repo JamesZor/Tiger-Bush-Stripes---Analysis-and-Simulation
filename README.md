@@ -4,7 +4,7 @@
 ## Description
 This assignment provides an overview of Tiger Bush, a fascinating natural phenomenon characterized by pattern-forming instability known as Turing patterns. We explore the concept of Tiger Bush, its formation, and the underlying mechanism of pattern generation through Turing patterns.
 
-![Alt text](figures/tigerbush?raw=true "TigerBush")
+![Alt text](figures/tigerbush.jpg?raw=true "TigerBush")
 ![Alt text](figures/Q6_fig1.jpg?raw=true "SimTigerBush")
 
 ## Tiger Bush
