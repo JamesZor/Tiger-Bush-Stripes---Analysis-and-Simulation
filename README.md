@@ -14,7 +14,7 @@ A minimal model for tiger bush formation is described by the following set of pa
 \frac{{\partial w}}{{\partial t}} &= \beta\frac{{\partial w}}{{\partial x}} + \alpha - w - wv^2 \\
 \end{align*}
 \]
-
+'''
 
 # NLDS_Assignment3
 Files and documents for the assignment 3, of the Non-linear dynamical systems course.
